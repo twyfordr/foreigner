@@ -23,6 +23,7 @@ module Foreigner
             LEFT JOIN sys.objects as ref_o ON (ref_o.object_id = fkc.referenced_object_id)
             LEFT JOIN sys.columns as ref_col ON (ref_col.object_id = fkc.referenced_object_id AND ref_col.column_id = fkc.referenced_column_id)
           WHERE t.name = '#{table_name}'
+          AND fk.name is not null
         }
 
         fk_info.collect do |row|
