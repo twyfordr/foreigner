@@ -2,7 +2,7 @@
  
 Gem::Specification.new do |s|
   s.name = 'marnen-foreigner'
-  s.version = '0.5.1'
+  s.version = '0.5.2'
   s.summary = 'Foreign keys for Rails'
   s.description = 'Adds helpers to migrations and correctly dumps foreign keys to schema.rb. Forked from matthuhiggins-foreigner.'
   
