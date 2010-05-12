@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name = 'marnen-foreigner'
   s.version = '0.9.2'
   s.summary = 'Foreign keys for Rails'
-  s.description = 'Adds helpers to migrations and correctly dumps foreign keys to schema.rb'
+  s.description = 'Adds helpers to migrations and correctly dumps foreign keys to schema.rb. Forked from marnen-foreigner.'
   
   s.required_ruby_version     = '>= 1.8.7'
   s.required_rubygems_version = '>= 1.3.6'
