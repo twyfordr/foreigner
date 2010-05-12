@@ -28,7 +28,7 @@ module Foreigner
         fk_info.collect do |row|
           options = {:column => row['column'], :name => row['name'], :primary_key => row['primary_key']}
           
-          options[:dependent] = case row['delete_action'].downcase
+          options[:dependent] = case row['delete_action'].to_s.downcase
           when 'cascade'
             :delete
           when 'set_null'
