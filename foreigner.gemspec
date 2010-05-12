@@ -2,7 +2,7 @@
  
 Gem::Specification.new do |s|
   s.name = 'marnen-foreigner'
-  s.version = '0.5.0'
+  s.version = '0.5.1'
   s.summary = 'Foreign keys for Rails'
   s.description = 'Adds helpers to migrations and correctly dumps foreign keys to schema.rb. Forked from matthuhiggins-foreigner.'
   
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     lib/foreigner/connection_adapters/sql_2003.rb
     lib/foreigner/connection_adapters/mysql_adapter.rb
     lib/foreigner/connection_adapters/postgresql_adapter.rb
+    lib/foreigner/connection_adapters/sqlserver_adapter.rb
     lib/foreigner/connection_adapters/abstract/schema_definitions.rb
     lib/foreigner/connection_adapters/abstract/schema_statements.rb
     test/helper.rb
