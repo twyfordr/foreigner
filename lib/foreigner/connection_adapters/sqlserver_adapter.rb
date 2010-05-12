@@ -1,6 +1,6 @@
 module Foreigner
   module ConnectionAdapters
-    module SqlserverAdapter
+    module SQLServerAdapter
       include Foreigner::ConnectionAdapters::Sql2003
 
       def remove_foreign_key(table, options)
@@ -46,8 +46,8 @@ end
 
 module ActiveRecord
   module ConnectionAdapters
-    SqlserverAdapter.class_eval do
-      include Foreigner::ConnectionAdapters::SqlserverAdapter
+    SQLServerAdapter.class_eval do
+      include Foreigner::ConnectionAdapters::SQLServerAdapter
     end
   end
 end
