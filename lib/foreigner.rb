@@ -38,13 +38,3 @@ Foreigner.register 'mysql', 'foreigner/connection_adapters/mysql_adapter'
 Foreigner.register 'mysql2', 'foreigner/connection_adapters/mysql_adapter'
 Foreigner.register 'postgresql', 'foreigner/connection_adapters/postgresql_adapter'
 Foreigner.register 'sqlserver', 'foreigner/connection_adapters/sqlserver_adapter'
-
-module Foreigner
-  class Railtie < Rails::Railtie
-    initializer 'foreigner.load_adapter' do
-      ActiveSupport.on_load :active_record do
-        Foreigner.load_adapter!
-      end
-    end
-  end
-end
