@@ -1,9 +1,17 @@
-require 'foreigner/connection_adapters/abstract/schema_statements'
-require 'foreigner/connection_adapters/abstract/schema_definitions'
-require 'foreigner/connection_adapters/sql_2003'
-require 'foreigner/schema_dumper'
-
 module Foreigner
+  extend ActiveSupport::Autoload
+  autoload :SchemaDumper
+
+  module ConnectionAdapters
+    extend ActiveSupport::Autoload
+    autoload :Sql2003
+
+    autoload_under 'abstract' do
+      autoload :SchemaStatements
+      autoload :SchemaDefinitions
+    end
+  end
+  
   class << self
     def adapters
       @@adapters ||= {}
@@ -38,3 +46,5 @@ Foreigner.register 'mysql', 'foreigner/connection_adapters/mysql_adapter'
 Foreigner.register 'mysql2', 'foreigner/connection_adapters/mysql_adapter'
 Foreigner.register 'postgresql', 'foreigner/connection_adapters/postgresql_adapter'
 Foreigner.register 'sqlserver', 'foreigner/connection_adapters/sqlserver_adapter'
+
+require 'foreigner/railtie'
